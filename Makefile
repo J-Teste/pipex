@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/03/24 18:37:04 by jteste           ###   ########.fr        #
+#    Updated: 2024/03/31 04:56:44 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ FTPRINTF	:= ./printf
 
 LIBS	:= $(FTPRINTF)/libftprintf.a
 SRCS	:= 	pipex.c \
+			utils.c \
 
 
 OBJS	:= $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:00:29 by jteste            #+#    #+#             */
-/*   Updated: 2024/03/30 22:35:47 by jteste           ###   ########.fr       */
+/*   Updated: 2024/03/31 05:53:00 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,19 @@
 // Struct
 typedef struct s_pipex
 {
-	char** paths;
+	char* path_cmd1;
+	char* path_cmd2;
 	char*	file_in;
 	char*	file_out;
+	int		fd_in;
+	int		fd_out;
 	int		pipe_fd[2];
 	
 }	t_pipex;
 
 
-char*	get_paths(char** env);
+char*	get_path(char *cmd, char** env);
+char *path_line(char **env);
+void	struct_init(char **argv, char** env, t_pipex *s);
 
 #endif

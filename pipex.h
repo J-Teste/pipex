@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:00:29 by jteste            #+#    #+#             */
-/*   Updated: 2024/04/01 05:19:48 by jteste           ###   ########.fr       */
+/*   Updated: 2024/04/01 05:27:14 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	double_tab_free(char **tab);
 void	free_all(t_pipex *s);
 void	child_process(t_pipex *s, char **env);
 void	parent_process(t_pipex *s, char **env);
+void	exec_cmd(t_pipex *s, char **env, int flag);
 
 #endif

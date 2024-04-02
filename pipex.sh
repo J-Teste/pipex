@@ -3,7 +3,7 @@
 GREEN="\033[32m"
 CLEAR="\033[0m"
 DELAY=0.05
-DURATION=1
+DURATION=2
 
 # Start time
 start_time=$(date +%s)

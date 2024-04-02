@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/04/02 18:20:25 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 23:52:15 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ all:		${NAME}
 
 bonus: $(OBJS)
 	@ar rc $(NAME) $(OBJS)
-	@echo "$(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
+	@echo "\n $(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
 
 
 clean:

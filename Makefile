@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/04/02 23:16:56 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 23:53:55 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ GREEN		:= \033[1;32m
 YELLOW		:= \033[1;33m
 BLUE		:= \033[1;34m
 CYAN 		:= \033[1;36m
+GREEN_BG	:= \033[42m
+YELLOW_UNDERLINE := \033[4;33m
 RM		    := rm -f
 	
 ftprintf:
@@ -40,7 +42,9 @@ ftprintf:
 
 $(NAME): $(SRCS) $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) -o $(NAME)
-	@echo "$(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
+	@echo "\n $(YELLOW)$(NAME) $(GREEN)Created succesfully \n$(CLR_RMV)"
+	@echo "$(GREEN)$(YELLOW_UNDERLINE)Use it as follow : ./pipex infile cm1 cm2 outfile\n$(CLR_RMV)"
+	
 	
 
 clean:

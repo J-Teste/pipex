@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/04/02 18:21:55 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 23:51:21 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME): $(OBJS)
 	@$(MAKE) -s bonus -C ./libft
 	@cp $(LIBFT) $(NAME)
 	@ar -rcs $(NAME) $(OBJS)
-	@echo "$(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
+	@echo "\n $(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
 
 
 all:		${NAME}

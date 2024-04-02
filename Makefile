@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/04/02 23:53:55 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 23:56:11 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ ftprintf:
 $(NAME): $(SRCS) $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) -o $(NAME)
 	@echo "\n $(YELLOW)$(NAME) $(GREEN)Created succesfully \n$(CLR_RMV)"
-	@echo "$(GREEN)$(YELLOW_UNDERLINE)Use it as follow : ./pipex infile cm1 cm2 outfile\n$(CLR_RMV)"
+	@echo "$(GREEN)$(YELLOW_UNDERLINE)Usage: ./pipex infile cmd1 cmd2 outfile\n$(CLR_RMV)"
 	
 	
 

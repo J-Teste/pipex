@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:46:51 by jteste            #+#    #+#             */
-/*   Updated: 2024/04/02 02:57:47 by jteste           ###   ########.fr       */
+/*   Updated: 2024/04/02 18:47:30 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-    if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 	{
-        return NULL;	
+		return (NULL);
 	}
 	len = (ft_strlen(s1) + ft_strlen(s2)) + 1;
 	str = (char *)malloc(sizeof(char) * len);

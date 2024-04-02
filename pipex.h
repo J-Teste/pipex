@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:00:29 by jteste            #+#    #+#             */
-/*   Updated: 2024/04/02 02:20:14 by jteste           ###   ########.fr       */
+/*   Updated: 2024/04/02 18:44:06 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,21 @@
 
 typedef struct s_pipex
 {
-	char** 	paths;
-	char*	path_cmd1;
-	char*	path_cmd2;
-	char**	cmd1_args;
-	char**	cmd2_args;
+	char	**paths;
+	char	*path_cmd1;
+	char	*path_cmd2;
+	char	**cmd1_args;
+	char	**cmd2_args;
 	pid_t	pid1;
 	pid_t	pid2;
 	int		fd_in;
 	int		fd_out;
 	int		pipe_fd[2];
-	
 }	t_pipex;
 
-char*	get_path(char *cmd, char** env, t_pipex *s);
-char*	path_line(char **env);
-void	struct_init(char **argv, char** env, t_pipex *s);
+char	*get_path(char *cmd, char	**env, t_pipex *s);
+char	*path_line(char **env);
+void	struct_init(char **argv, char	**env, t_pipex *s);
 void	double_tab_free(char **tab);
 void	free_all(t_pipex *s);
 void	first_child_process(t_pipex *s, char **env);

@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/03/31 04:56:44 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 04:57:07 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,13 +37,6 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 	@$(MAKE) -C $(FTPRINTF) fclean
-
-re: clean all
-fclean: clean
-	@rm -f $(NAME)
-	@$(MAKE) -C $(FTPRINTF) fclean
-	
-
 
 re: clean all
 

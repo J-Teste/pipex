@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 04:55:50 by jteste            #+#    #+#             */
-/*   Updated: 2024/04/01 04:43:38 by jteste           ###   ########.fr       */
+/*   Updated: 2024/04/02 02:14:01 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@ void	struct_init(char **argv, char** env, t_pipex *s)
 {
 	s->fd_in = open(argv[1],O_RDONLY);
 	if (s->fd_in < 0)
-	{
 		perror("Error opening in_file");
-		exit(EXIT_FAILURE);
-	}
 	s->fd_out = open(argv[4],O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	if (s->fd_out < 0)
 	{
-		perror("Error opening out_file");
+		perror("Error creating out_file");
 		exit(EXIT_FAILURE);
 	}
 	if (pipe(s->pipe_fd) == -1)
@@ -70,9 +67,7 @@ char *path_line(char **env)
 	while (env[i])
 	{
 		if (ft_strncmp(env[i],"PATH=",5) == 0)
-		{
 			return(env[i]+5);
-		}
 		i++;
 	}
 	return(NULL);

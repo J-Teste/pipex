@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2024/02/13 12:56:54 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 18:20:25 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,40 +48,40 @@ SRCS        :=      ft_substr.c \
 						  ft_strmapi.c \
 						  ft_itoa.c \
 						  ft_split.c
-
-
-SRC_BONUS :=
-                          
+                                    
 OBJS        := $(SRCS:.c=.o)
 
-OBJS_BONUS := $(SRC_BONUS:.c=.o)
-
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
+CLR_RMV		:= \033[0m
+RED		    := \033[1;31m
+GREEN		:= \033[1;32m
+YELLOW		:= \033[1;33m
+BLUE		:= \033[1;34m
+CYAN 		:= \033[1;36m
 RM		    := rm -f
 
 $(NAME): $(OBJS)
 	@echo "Linking $@"
 	@ar rc $(NAME) $(OBJS)
-	@echo "Done!"
+	@echo "$(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
 
 
 all:		${NAME}
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	@echo "Linking $@"
-	@ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
-	@echo "Done!"
+bonus: $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@echo "$(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
 
 
 clean:
-			@ ${RM} *.o */*.o */*/*.o
-			@ echo "Deleting objs ✔️"
+			@rm -f $(OBJS)
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️" 
 
-fclean:		clean
-			@ ${RM} ${NAME}
-			@ echo "Deleting binary ✔️"
+fclean:		
+			@rm -f $(NAME)
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
 re:			fclean all
 

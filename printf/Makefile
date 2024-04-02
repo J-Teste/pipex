@@ -6,7 +6,7 @@
 #    By: jteste <jteste@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 11:42:35 by jteste            #+#    #+#              #
-#    Updated: 2023/11/21 13:35:45 by jteste           ###   ########.fr        #
+#    Updated: 2024/04/02 18:21:55 by jteste           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS        :=	ft_printf.c \
 OBJS        := $(SRCS:.c=.o)
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 
 CLR_RMV		:= \033[0m
@@ -41,24 +41,23 @@ CYAN 		:= \033[1;36m
 RM		    := rm -f
 
 $(NAME): $(OBJS)
-	@echo "Linking "
-	$(MAKE) bonus -C ./libft
-	cp $(LIBFT) $(NAME)
+	@$(MAKE) -s bonus -C ./libft
+	@cp $(LIBFT) $(NAME)
 	@ar -rcs $(NAME) $(OBJS)
-	@echo "Done!"
+	@echo "$(YELLOW)$(NAME) $(GREEN)Created succesfully $(CLR_RMV)"
 
 
 all:		${NAME}
 
 clean:
-			$(MAKE) clean -C ./libft
-			@ ${RM} *.o */*.o */*/*.o
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
+	@rm -f $(OBJS)
+	@echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
+	@$(MAKE) --no-print-directory -C ./libft clean
 
-fclean:		clean
-			$(MAKE) fclean -C ./libft
-			@ ${RM} ${NAME}
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
+fclean:
+	@rm -f $(NAME)
+	@echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
+	@$(MAKE) --no-print-directory -C ./libft fclean
 
 re:			fclean all
 
